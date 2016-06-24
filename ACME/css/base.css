@@ -15,6 +15,14 @@ nav {
   color: white;
   text-shadow: 1px 1px black;
 }
+a {
+  color: white;
+  text-decoration: none;
+}
+.logo {
+  width: 190px;
+  a href: url(http://acme.com/)
+}
 li {
   display: inline;
   padding: 10px;
