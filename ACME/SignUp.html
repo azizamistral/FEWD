@@ -3,7 +3,16 @@
   <head>
     <link rel="stylesheet" href="css/base.css" media="screen" title="no title" charset="utf-8">
     <title>ACME Corp - Sign Up</title>
-
+    <style media="screen">
+      label {
+        width: 100px;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .form-row {
+        margin-bottom: 1em;
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -17,43 +26,41 @@
           </ul>
         </nav>
       </header>
-      <br>
-      <br>
-      <br>
       <main>
         <h1>Sign Up</h1>
-        <p>
           <form class="test" action="index.html" method="get">
-            <div class"form-row">
+            <div class="form-row">
               <label for="fname">First name:</label>
-              <input placeholder="Placeholder" id="fname" type="text" name="first-name">
+              <input placeholder="John" id="fname" type="text" name="first-name">
             </div>
-            <div class"form-row">
+            <div class="form-row">
               <label for="lname">Last name:</label>
-              <input placeholder="Placeholder" id="lname" type="text" name="last-name">
+              <input placeholder="Doe" id="lname" type="text" name="last-name">
             </div>
-            <div class"form-row">
+            <div class="form-row">
               <label for="email">Email:</label>
-              <input placeholder="Placeholder" id="email" type="email" name="email">
+              <input placeholder="john.doe@xmpl.web" id="email" type="email" name="email">
             </div>
-            <div class"form-row">
+            <div class="form-row">
               <label for="password">Password:</label>
-              <input placeholder="Placeholder" id="password" type="text" name="email">
+              <input placeholder="******" id="password" type="text" name="email">
             </div>
-          </form>
-           How did you hear about us?<br>
-            <select required>
-              <option value="">Pick one...</option>
-              <option value="Friend">Friend</option>
-              <option value="Advertisement">Advertisement</option>
-            </select><br>
-           <input type="checkbox" value="agree"> Agree to our terms of service<br>
-           <input type="submit" value="Sign Up">
-        </p>
+           <div class="form-row">
+             How did you hear about us?<br>
+             <select required>
+                <option value="">Pick one...</option>
+                <option value="Friend">Friend</option>
+                <option value="Advertisement">Advertisement</option>
+              </select>
+           </div>
+           <div class="form-row">
+             <input type="checkbox" value="agree"> Agree to our terms of service
+           </div>
+           <div class="form-row">
+             <input type="submit" value="Sign Up">
+           </div>
+         </form>
       </main>
-      <br>
-      <br>
-      <br>
       <footer>
         <p>Copyright, 2015</p>
       </footer>
