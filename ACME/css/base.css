@@ -6,7 +6,12 @@ body {
 header {
   background-color: rgb(196,196,196);
   padding: 20px;
-  border: solid 1px black;
+  border-bottom: 1px solid black;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+header a {
+  color: white;
+  text-decoration: none;
 }
 nav {
   float: right;
@@ -14,10 +19,6 @@ nav {
   font-size: 16px;
   color: white;
   text-shadow: 1px 1px black;
-}
-a {
-  color: white;
-  text-decoration: none;
 }
 .logo {
   width: 190px;

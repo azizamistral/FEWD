@@ -1,6 +1,8 @@
+div {
+  overflow: auto;
+}
 .product {
   margin-bottom: 1em;
-  overflow: auto;
 }
 .product_img {
   float: left;
@@ -10,6 +12,8 @@
   background-color: white;
   border: 2px solid blue;
   border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
 }
 .deet_butt:hover {
   color: white;
@@ -18,7 +22,10 @@
 .cart_butt {
   color: white;
   background-color: blue;
-  border-radius: 4px
+  border: 2px solid blue;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
 }
 .cart_butt:hover {
   color: blue;
