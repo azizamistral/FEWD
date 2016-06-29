@@ -1,0 +1,26 @@
+.product {
+  margin-bottom: 1em;
+  overflow: auto;
+}
+.product img {
+  float: left;
+}
+.deet_butt {
+  color: blue;
+  background-color: white;
+  border: 2px solid blue;
+  border-radius: 4px;
+}
+.deet_butt:hover {
+  color: white;
+  background-color: blue;
+}
+.cart_butt {
+  color: white;
+  background-color: blue;
+  border-radius: 4px
+}
+.cart_butt:hover {
+  color: blue;
+  background-color: white;
+}
