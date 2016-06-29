@@ -7,12 +7,12 @@
   </head>
   <body>
     <header>
-      <a href="http://acme.com/"><img src="https://azizamistral.github.io/FEWD/ACME/images/acme-corp.jpg"
+      <a href="http://acme.com/"><img src="images/acme-corp.jpg"
       alt="ACME Corp logo" class="logo"/></a>
         <nav>
           <ul>
-            <li><a href="https://azizamistral.github.io/FEWD/ACME/Products.html">Products</a></li>
-            <li><a href="https://azizamistral.github.io/FEWD/ACME/SignUp.html" class="button">
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="SignUp.html" class="button">
               Sign Up</a></li>
           </ul>
         </nav>
@@ -22,10 +22,25 @@
       <br>
       <main>
         <h1>Sign Up</h1>
-        <p><label for="fname">First Name</label> <input type="text" name="fname" value="John"><br>
-           <label for="lname">Last Name</label> <input type="text" name="lname" value="Doe"><br>
-           <label for="email">Email</label> <input type="email" name="email" value="john.doe@example.com" autocomplete="on"><br>
-           <label for="password">Password</label> <input type="text" name="password" value=""><br>
+        <p>
+          <form class="test" action="index.html" method="get">
+            <div class"form-row">
+              <label for="fname">First name:</label>
+              <input placeholder="Placeholder" id="fname" type="text" name="first-name">
+            </div>
+            <div class"form-row">
+              <label for="lname">Last name:</label>
+              <input placeholder="Placeholder" id="lname" type="text" name="last-name">
+            </div>
+            <div class"form-row">
+              <label for="email">Email:</label>
+              <input placeholder="Placeholder" id="email" type="email" name="email">
+            </div>
+            <div class"form-row">
+              <label for="password">Password:</label>
+              <input placeholder="Placeholder" id="password" type="text" name="email">
+            </div>
+          </form>
            How did you hear about us?<br>
             <select required>
               <option value="">Pick one...</option>
