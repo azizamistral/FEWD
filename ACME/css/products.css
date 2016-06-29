@@ -1,11 +1,11 @@
-div {
-  overflow: auto;
-}
 .product {
   margin-bottom: 1em;
+  overflow: auto;
 }
 .product_img {
   float: left;
+  padding-right: 2em;
+  width: 300px;
 }
 .deet_butt {
   color: blue;
