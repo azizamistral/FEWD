@@ -12,6 +12,21 @@
       .form-row {
         margin-bottom: 1em;
       }
+      .text_input {
+        width: 200px;
+        border: 2px solid black;
+      }
+      .text_input:invalid {
+        border: 2px solid red;
+      }
+      .text_input:valid {
+        border: 2px solid green;
+      }
+      .text_input:focus {
+        box-shadow: none;
+        border: 2px solid black;
+        outline: none;
+      }
     </style>
   </head>
   <body>
@@ -28,22 +43,22 @@
       </header>
       <main>
         <h1>Sign Up</h1>
-          <form class="test" action="index.html" method="get">
+          <form class="SignUp" action="index.html" method="get">
             <div class="form-row">
               <label for="fname">First name:</label>
-              <input placeholder="John" id="fname" type="text" name="first-name">
+              <input class="text_input" placeholder="John" id="fname" type="text" name="first-name" required>
             </div>
             <div class="form-row">
               <label for="lname">Last name:</label>
-              <input placeholder="Doe" id="lname" type="text" name="last-name">
+              <input class="text_input" placeholder="Doe" id="lname" type="text" name="last-name" required>
             </div>
             <div class="form-row">
               <label for="email">Email:</label>
-              <input placeholder="john.doe@xmpl.web" id="email" type="email" name="email">
+              <input class="text_input" placeholder="john.doe@xmpl.web" id="email" type="email" name="email" required>
             </div>
             <div class="form-row">
               <label for="password">Password:</label>
-              <input placeholder="******" id="password" type="text" name="email">
+              <input class="text_input" id="password" type="password" name="email" required>
             </div>
            <div class="form-row">
              How did you hear about us?<br>
@@ -54,7 +69,7 @@
               </select>
            </div>
            <div class="form-row">
-             <input type="checkbox" value="agree"> Agree to our terms of service
+             <input type="checkbox" value="agree" required> Agree to our terms of service
            </div>
            <div class="form-row">
              <input type="submit" value="Sign Up">
