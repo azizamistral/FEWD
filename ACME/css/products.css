@@ -14,6 +14,7 @@
   border-radius: 4px;
   padding: 5px;
   font-size: 16px;
+  cursor: pointer;
 }
 .deet_butt:hover {
   color: white;
@@ -26,6 +27,7 @@
   border-radius: 4px;
   padding: 5px;
   font-size: 16px;
+  cursor: pointer;
 }
 .cart_butt:hover {
   color: blue;
