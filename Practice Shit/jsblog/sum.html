@@ -1,0 +1,19 @@
+<input type="text" id="box1">
+<input type="text" id="box2">
+<button>Add My Shit</button>
+
+<script type="text/javascript">
+  var mac = document.querySelector("#box1");
+  var cheese = document.querySelector("#box2");
+  var button = document.querySelector("button");
+  var para = document.querySelector("p");
+
+  button.addEventListener("click", add);
+
+  function add() {
+    mac = parseInt(mac.value);
+    cheese = parseInt(cheese.value);
+
+    para.textContent = mac + cheese;
+  }
+</script>

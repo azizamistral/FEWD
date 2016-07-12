@@ -1,0 +1,16 @@
+<input type="text">
+<button>Add Comment</button>
+
+<script type="text/javascript">
+  var body = document.querySelector("body");
+  var comment = document.querySelector("input");
+  var button = document.querySelector("button");
+
+  button.addEventListener("click", addComment)
+
+  function addComment () {
+    var p = document.createElement("p")
+    p.textContent = comment.value;
+    body.appendChild(p);
+  }
+</script>
