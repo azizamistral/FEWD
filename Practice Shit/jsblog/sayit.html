@@ -14,3 +14,21 @@
     body.appendChild(p);
   }
 </script>
+
+say it 2
+<input type="text">
+<button>Say It</button>
+
+<script type="text/javascript">
+  var answer = document.querySelector("input")
+  var body = document.querySelector("body")
+  var button = document.querySelector("button")
+
+  button.addEventListener("click", sayIt)
+
+  function sayIt() {
+    var newWords = document.createElement("p")
+    body.appendChild(newWords)
+    newWords.textContent = answer.value;
+  }
+</script>
