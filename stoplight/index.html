@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Red Light, Green Light</title>
+    <style media="screen">
+
+    .buttons {
+      text-align: center;
+    }
+    button {
+      font-size: 18px;
+      width: 100px;
+      height: 45px;
+      padding: 5px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+    }
+    button:focus {
+      outline: none;
+    }
+    #stop {
+      background-color: red;
+    }
+    #stop:hover {
+      color: red;
+      background-color: white;
+      border: 1px solid red;
+      cursor: pointer;
+    }
+    #slow {
+      background-color: yellow;
+    }
+    #slow:hover {
+      color: yellow;
+      background-color: white;
+      border: 1px solid yellow;
+      cursor: pointer;
+    }
+    #go {
+      background-color: green;
+    }
+    #go:hover {
+      color: green;
+      background-color: white;
+      border: 1px solid green;
+      cursor: pointer;
+    }
+    #caution {
+      background-color: orange;
+    }
+    #caution:hover {
+      color: orange;
+      background-color: white;
+      border: 1px solid orange;
+      cursor: pointer;
+    }
+    .light {
+      margin: 20px auto;
+      width: 275px;
+      height: 600px;
+      padding: 20px;
+      background-color: rgb(245, 193, 37);
+      border: 4px solid rgb(224, 183, 7);
+      border-radius: 20px;
+      position: relative;
+    }
+    .red {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: rgb(116, 89, 9);
+      border: solid black;
+      border-width: 8px 2px 2px 2px;
+      top: 20px;
+      left: 65px;
+      position: absolute;
+    }
+    .yellow {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: rgb(116, 89, 9);
+      border: 2px solid black;
+      border-width: 8px 2px 2px 2px;
+      top: 225px;
+      left: 65px;
+      position: absolute;
+    }
+    .green {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: rgb(116, 89, 9);
+      border: 2px solid black;
+      border-width: 8px 2px 2px 2px;
+      bottom: 20px;
+      left: 65px;
+      position: absolute;
+    }
+    .redOn {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: red;
+      background: radial-gradient(circle, transparent, rgb(116,89,9)), red;
+      background: -webkit-radial-gradient(circle, transparent, rgb(116,89,9)), red;
+      background: -moz-radial-gradient(circle, transparent, rgb(116,89,9)), red;
+      border: solid black;
+      border-width: 8px 2px 2px 2px;
+      top: 20px;
+      left: 65px;
+      position: absolute;
+    }
+    .yellowOn {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: yellow;
+      background: radial-gradient(circle, transparent, rgb(116,89,9)), yellow;
+      background: -webkit-radial-gradient(circle, transparent, rgb(116,89,9)), yellow;
+      background: -moz-radial-gradient(circle, transparent, rgb(116,89,9)), yellow;
+      border: solid black;
+      border-width: 8px 2px 2px 2px;
+      top: 225px;
+      left: 65px;
+      position: absolute;
+    }
+    .greenOn {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: green;
+      background: radial-gradient(circle, transparent, rgb(116,89,9)), green;
+      background: -webkit-radial-gradient(circle, transparent, rgb(116,89,9)), green;
+      background: -moz-radial-gradient(circle, transparent, rgb(116,89,9)), green;
+      border: solid black;
+      border-width: 8px 2px 2px 2px;
+      bottom: 20px;
+      left: 65px;
+      position: absolute;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="buttons">
+      <button type="button" id="stop">Stop</button>
+      <button type="button" id="slow">Slow</button>
+      <button type="button" id="go">Go</button>
+      <button type="button" id="caution">Caution</button>
+    </div>
+
+    <div class="light">
+      <div class="red"></div>
+      <div class="yellow"></div>
+      <div class="green"></div>
+    </div>
+
+<script type="text/javascript">
+  var stop = document.querySelector("#stop")
+  var slow = document.querySelector("#slow")
+  var caution = document.querySelector("#caution")
+  var go = document.querySelector("#go")
+
+  var red= document.querySelector(".red");
+  var yellow = document.querySelector(".yellow");
+  var green = document.querySelector(".green");
+
+  stop.addEventListener("click", redLight);
+  slow.addEventListener("click", yellowLight);
+  go.addEventListener("click", greenLight);
+  caution.addEventListener("click", function (event) {
+    setInterval(blinkLight,1000)
+  });
+
+  function redLight() {
+    red.classList.toggle("redOn");
+    yellow.classList.remove("yellowOn");
+    green.classList.remove("greenOn");
+    clearInterval(blinkLight);
+  }
+
+  function yellowLight() {
+    yellow.classList.toggle("yellowOn");
+    red.classList.remove("redOn");
+    green.classList.remove("greenOn");
+    clearInterval(blinkLight);
+  }
+
+  function greenLight() {
+    green.classList.toggle("greenOn");
+    yellow.classList.remove("yellowOn");
+    red.classList.remove("redOn");
+    clearInterval(blinkLight);
+  }
+
+  function blinkLight() {
+    yellow.classList.toggle("yellowOn");
+    red.classList.remove("redOn");
+    green.classList.remove("greenOn");
+  }
+</script>
+  </body>
+</html>
