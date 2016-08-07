@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      body {
+        margin: 0;
+        font-family: century gothic;
+        background: url(http://img.zcool.cn/community/0333409554c77db00000158fcffd028.jpg)
+      }
+
+      main {
+        text-align: center;
+        margin: 2em auto;
+        box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+        background: white;
+        padding: 2em 3em;
+        max-width: 600px;
+        border-radius: 5px;
+      }
+
+      h1 {
+        color: rgb(19,18,123);
+      }
+
+      .button {
+        height: 40px;
+        width: 100px;
+        border-radius: 5px;
+        color: white;
+        background-color: rgb(244, 16, 50);
+        border: none;
+      }
+
+      #movieTitle {
+        width: 200px;
+      }
+
+      .directions li:strong {
+        color: rgb(214,97,0)
+      }
+
+      .movieList {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .movieList li {
+        margin-top: 20px;
+        padding-top: 8px;
+        color: rgb(71,204,196);
+      }
+
+
+    </style>
+    <title>Find-A-Mov: For When You Don't Know How to Google</title>
+  </head>
+  <body>
+    <main>
+      <h1>Directions:</h1>
+        <ul style="list-style-type:none" class="directions">
+          <li><strong><font color="orange">Pick</font></strong> a movie you want to know some trivial stuff about.</li>
+          <li><strong><font color="orange">Type</font></strong> the title of the movie in the box.</li>
+          <li><strong><font color="orange">Maybe</font></strong> pick up some other basic life skills like Google, reading, etc.</li>
+          <li><strong><font color="orange">Hit</font></strong> the 'Find a Mov' button.</li>
+          <li><strong><font color="orange">Partake</font></strong> of your spoils.</li>
+        </ul>
+      <form>
+        <input type="text" id="movieTitle" placeholder="ex. Sex and the Matrix">
+        <button class="button" type="submit"><strong>Find A Mov</strong></button>
+      </form>
+      <ul class="movieList">
+      </ul>
+    </main>
+
+    <script type="text/javascript">
+    var form = document.querySelector("form");
+
+    form.addEventListener("submit", requestHTTP);
+
+    function requestHTTP(event) {
+      event.preventDefault();
+
+      var input = document.querySelector("#movieTitle").value;
+      var url = "http://omdbapi.com/?s=" + input;
+
+      get(url, showMovieList);
+
+      form.reset();
+    }
+
+    function get(url, callback) {
+      var request = new XMLHttpRequest();
+
+      request.open("GET", url, true);
+
+      request.addEventListener("readystatechange", handleReadyStateChange)
+
+      function handleReadyStateChange() {
+        if (request.readyState == 4 && request.status == 200) {
+          callback(request.responseText);
+        }
+      };
+      request.send();
+    }
+
+    function showMovieList(response) {
+      console.log(response);
+
+      var movieList = JSON.parse(response);
+
+      movieList.Search.forEach(listMovies)
+    }
+
+    function listMovies(movie) {
+        var movieList = document.querySelector(".movieList");
+        var headTitle = document.createElement("div");
+        var footYear = document.createElement("div")
+        var result = document.createElement("li");
+
+        movieList.appendChild(result).appendChild(headTitle).textContent = movie.Title;
+        result.appendChild(footYear).textContent = movie.Year;
+    }
+
+    </script>
+  </body>
+</html>
